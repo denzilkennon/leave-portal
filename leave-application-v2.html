@@ -960,7 +960,10 @@ async function renderCalendar() {
     const events = apps.filter(a => {
       const st = String(a.status).trim().toLowerCase();
       if (st === 'rejected') return false;
-      return dateStr >= a.from && dateStr <= a.to;
+      // Normalise from/to to YYYY-MM-DD regardless of ISO timestamp or plain date
+      const fromStr = a.from ? new Date(a.from).toISOString().slice(0,10) : '';
+      const toStr   = a.to   ? new Date(a.to).toISOString().slice(0,10)   : '';
+      return dateStr >= fromStr && dateStr <= toStr;
     });
 
     const eventHtml = events.map(a => {
