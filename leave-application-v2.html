@@ -902,7 +902,8 @@ document.getElementById('modal-confirm-btn').addEventListener('click', async fun
   if (action==='delete') {
     await apiPost({ action:'delete', id });
   } else {
-    const fields = { status: action==='pending'?'pending':action, decidedAt: new Date().toISOString() };
+    const statusMap = { approve:'approved', reject:'rejected', pending:'pending' };
+    const fields = { status: statusMap[action] || action, decidedAt: new Date().toISOString() };
     if (action === 'approve' || action === 'reject') fields.approvedBy = currentManager ? currentManager.name : '';
     await apiPost({ action:'update', id, fields });
   }
@@ -959,8 +960,8 @@ async function renderCalendar() {
     // Find leave events on this date
     const events = apps.filter(a => {
       const st = String(a.status).trim().toLowerCase();
-      if (st === 'rejected') return false;
-      // Normalise from/to to YYYY-MM-DD regardless of ISO timestamp or plain date
+      if (st === 'rejected' || st === 'reject') return false;
+      // Normalise ISO timestamps or plain dates to YYYY-MM-DD
       const fromStr = a.from ? new Date(a.from).toISOString().slice(0,10) : '';
       const toStr   = a.to   ? new Date(a.to).toISOString().slice(0,10)   : '';
       return dateStr >= fromStr && dateStr <= toStr;
@@ -968,9 +969,10 @@ async function renderCalendar() {
 
     const eventHtml = events.map(a => {
       const st = String(a.status).trim().toLowerCase();
+      const isApproved = st === 'approved' || st === 'approve';
       const shortName = a.doctor.replace('Dr. ', '').split(' ')[0];
-      const bg    = st === 'approved' ? '#C8EAD8' : '#FDDCDC';
-      const color = st === 'approved' ? '#0F5132' : '#7A2020';
+      const bg    = isApproved ? '#C8EAD8' : '#FDDCDC';
+      const color = isApproved ? '#0F5132' : '#7A2020';
       return `<div class="cal-event" style="background:${bg};color:${color};" title="${a.doctor} — ${a.type} (${st})">${shortName}</div>`;
     }).join('');
 
