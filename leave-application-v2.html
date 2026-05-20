@@ -332,8 +332,8 @@
     <!-- Requests sub-panel -->
     <div id="admin-sub-requests">
       <div class="filter-bar">
-        <button class="filter-chip active" onclick="setFilter('all', this)">All</button>
-        <button class="filter-chip" onclick="setFilter('pending', this)">Pending</button>
+        <button class="filter-chip" onclick="setFilter('all', this)">All</button>
+        <button class="filter-chip active" onclick="setFilter('pending', this)">Pending</button>
         <button class="filter-chip" onclick="setFilter('approved', this)">Approved</button>
         <button class="filter-chip" onclick="setFilter('rejected', this)">Rejected</button>
         <div class="filter-spacer"></div>
@@ -649,7 +649,20 @@ function showAdminTab(tab, btn) {
 
 // ── Helpers ──
 function genId() { return 'LA-' + Date.now().toString(36).toUpperCase(); }
-function formatDate(d) { if (!d) return '—'; const [y,m,day] = d.split('-'); return `${day}/${m}/${y}`; }
+function formatDate(d) {
+  if (!d) return '—';
+  const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  // Handle full ISO timestamp (e.g. 2026-05-31T22:00:00.000Z) or plain YYYY-MM-DD
+  const dt = new Date(d);
+  if (!isNaN(dt)) {
+    // Use UTC values to avoid timezone shifting the date
+    const day = String(dt.getUTCDate()).padStart(2,'0');
+    const mon = MONTHS_SHORT[dt.getUTCMonth()];
+    const yr  = String(dt.getUTCFullYear()).slice(-2);
+    return `${day} ${mon} ${yr}`;
+  }
+  return d;
+}
 function calcDays(from, to) {
   const d1 = new Date(from), d2 = new Date(to);
   if (isNaN(d1) || isNaN(d2) || d2 < d1) return 0;
@@ -765,7 +778,7 @@ async function renderMyApps() {
         </div>
         <div class="own-req-dates">${formatDate(a.from)} → ${formatDate(a.to)}</div>
         <div class="own-req-reason">${a.reason}</div>
-        ${a.cover ? `<div style="font-size:12px;color:var(--text-faint);margin-top:4px;">Cover: ${a.cover}</div>` : ''}
+        ${a.cover && a.cover.trim().length > 2 ? `<div style="font-size:12px;color:var(--text-faint);margin-top:4px;">Cover: ${a.cover}</div>` : ''}
         ${a.comments ? `<div style="font-size:12px;color:var(--warning);margin-top:4px;background:var(--warning-light);padding:4px 8px;border-radius:6px;">Manager note: ${a.comments}</div>` : ''}
         <div style="font-size:11px;color:var(--text-faint);margin-top:6px;">Ref: ${a.id} · Submitted ${new Date(a.submittedAt).toLocaleDateString()}</div>
       </div>
@@ -779,7 +792,7 @@ async function renderMyApps() {
 
 // ── Admin ──
 let allApps = [];
-let currentFilter = 'all';
+let currentFilter = 'pending';
 let pendingAction = null;
 
 function adminLogin() {
@@ -849,7 +862,7 @@ function renderAdminPanel() {
       </div>
       <div class="req-dates">📅 ${formatDate(a.from)} → ${formatDate(a.to)}</div>
       <div class="req-reason">${a.reason}</div>
-      ${a.cover ? `<div style="font-size:12px;color:var(--text-faint);margin-bottom:8px;">Cover: ${a.cover}</div>` : ''}
+      ${a.cover && a.cover.trim().length > 2 ? `<div style="font-size:12px;color:var(--text-faint);margin-bottom:8px;">Cover: ${a.cover}</div>` : ''}
       <div class="req-actions">
         ${a.status==='pending' ? `
           <button class="btn-approve" onclick="openConfirm('approve','${a.id}')">Approve</button>
@@ -945,13 +958,17 @@ async function renderCalendar() {
 
     // Find leave events on this date
     const events = apps.filter(a => {
-      if (a.status === 'rejected') return false;
+      const st = String(a.status).trim().toLowerCase();
+      if (st === 'rejected') return false;
       return dateStr >= a.from && dateStr <= a.to;
     });
 
     const eventHtml = events.map(a => {
+      const st = String(a.status).trim().toLowerCase();
       const shortName = a.doctor.replace('Dr. ', '').split(' ')[0];
-      return `<div class="cal-event ${a.status}" title="${a.doctor} — ${a.type}">${shortName}</div>`;
+      const bg    = st === 'approved' ? '#C8EAD8' : '#FDDCDC';
+      const color = st === 'approved' ? '#0F5132' : '#7A2020';
+      return `<div class="cal-event" style="background:${bg};color:${color};" title="${a.doctor} — ${a.type} (${st})">${shortName}</div>`;
     }).join('');
 
     html += `<div class="cal-cell${outside?' outside':''}${isToday?' today':''}">
