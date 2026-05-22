@@ -432,13 +432,13 @@
 // ═══════════════════════════════════════
 //  CONFIG
 // ═══════════════════════════════════════
-const STORAGE_KEY = 'leave_script_url';
+const HARDCODED_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzvNlIWtKJmNNoXWh77SnBB3kApqvI2SIlQoVXTpgfl4fSAxjdlG2N7dqDo4CEIg197/exec';
 let currentManager = null;
 let _doctors  = null;   // in-memory cache for this session
 let _managers = null;
 
 // ── Script URL ──
-function getScriptUrl() { return localStorage.getItem(STORAGE_KEY) || ''; }
+function getScriptUrl() { return HARDCODED_SCRIPT_URL || localStorage.getItem(STORAGE_KEY) || ''; }
 
 function saveScriptUrl() {
   const url = document.getElementById('script-url-input').value.trim();
