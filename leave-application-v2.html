@@ -20,75 +20,34 @@
     --radius: 10px; --radius-lg: 16px;
   }
   body { font-family: var(--font-sans); background: var(--bg); color: var(--text); min-height: 100vh; }
-
-  /* ── CONFIG BANNER ── */
-  #config-banner {
-    background: #7A5010; color: #fff; padding: 10px 2rem;
-    font-size: 13px; display: flex; align-items: center; gap: 12px;
-  }
+  #config-banner { background: #7A5010; color: #fff; padding: 10px 2rem; font-size: 13px; display: flex; align-items: center; gap: 12px; }
   #config-banner a { color: #FFD88A; text-decoration: underline; cursor: pointer; }
   #config-banner.hidden { display: none; }
   #config-form { display: flex; gap: 8px; align-items: center; flex: 1; }
-  #config-form input {
-    flex: 1; padding: 5px 10px; border-radius: 6px; border: none;
-    font-size: 13px; font-family: var(--font-sans); max-width: 520px;
-  }
-  #config-form button {
-    background: #fff; color: #7A5010; border: none;
-    padding: 5px 14px; border-radius: 6px; font-size: 13px;
-    font-weight: 600; cursor: pointer;
-  }
-
-  /* ── HEADER ── */
-  .site-header {
-    background: var(--accent); padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 60px; position: sticky; top: 0; z-index: 100;
-  }
+  #config-form input { flex: 1; padding: 5px 10px; border-radius: 6px; border: none; font-size: 13px; font-family: var(--font-sans); max-width: 520px; }
+  #config-form button { background: #fff; color: #7A5010; border: none; padding: 5px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .site-header { background: var(--accent); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
   .site-header .brand { font-family: var(--font-serif); color: #fff; font-size: 18px; }
   .site-header .brand span { color: #9ECFBF; }
   .nav-tabs { display: flex; gap: 4px; }
-  .nav-tab {
-    padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 500;
-    color: rgba(255,255,255,0.7); cursor: pointer; border: none; background: transparent; transition: all 0.15s;
-  }
+  .nav-tab { padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); cursor: pointer; border: none; background: transparent; transition: all 0.15s; }
   .nav-tab:hover { color: #fff; background: rgba(255,255,255,0.1); }
   .nav-tab.active { color: #fff; background: rgba(255,255,255,0.18); }
-
-  /* ── LAYOUT ── */
   .page { display: none; padding: 2.5rem 2rem; max-width: 860px; margin: 0 auto; }
   .page.visible { display: block; }
-
-  /* ── CARDS ── */
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.5rem; }
   .card-title { font-family: var(--font-serif); font-size: 22px; margin-bottom: 4px; }
   .card-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 1.75rem; }
-
-  /* ── FORM ── */
   .field { margin-bottom: 1.25rem; }
   .field label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
-  .field input, .field select, .field textarea {
-    width: 100%; padding: 10px 14px; border: 1px solid var(--border);
-    border-radius: var(--radius); font-family: var(--font-sans); font-size: 14px;
-    color: var(--text); background: var(--surface); transition: border-color 0.15s; outline: none;
-  }
-  .field input:focus, .field select:focus, .field textarea:focus {
-    border-color: var(--accent); box-shadow: 0 0 0 3px rgba(29,75,62,0.1);
-  }
+  .field input, .field select, .field textarea { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius); font-family: var(--font-sans); font-size: 14px; color: var(--text); background: var(--surface); transition: border-color 0.15s; outline: none; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(29,75,62,0.1); }
   .field textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
   .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .field .helper { font-size: 11px; color: var(--text-faint); margin-top: 4px; }
-
-  /* ── LEAVE PILLS ── */
   .leave-types { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.25rem; }
-  .leave-pill {
-    padding: 6px 14px; border: 1px solid var(--border); border-radius: 99px;
-    font-size: 13px; cursor: pointer; background: var(--surface); color: var(--text-muted); transition: all 0.15s; user-select: none;
-  }
+  .leave-pill { padding: 6px 14px; border: 1px solid var(--border); border-radius: 99px; font-size: 13px; cursor: pointer; background: var(--surface); color: var(--text-muted); transition: all 0.15s; user-select: none; }
   .leave-pill:hover { border-color: var(--accent); color: var(--accent); }
   .leave-pill.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent); font-weight: 500; }
-
-  /* ── BUTTONS ── */
   .btn-primary { background: var(--accent); color: #fff; border: none; padding: 11px 28px; border-radius: var(--radius); font-family: var(--font-sans); font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
   .btn-primary:hover { background: var(--accent-mid); }
   .btn-primary:disabled { background: #C0BDB8; cursor: not-allowed; }
@@ -97,29 +56,19 @@
   .btn-approve { background: var(--success); color: #fff; border: none; padding: 8px 16px; border-radius: var(--radius); font-size: 13px; cursor: pointer; }
   .btn-reject { background: transparent; color: var(--danger); border: 1px solid #E8BABA; padding: 7px 16px; border-radius: var(--radius); font-size: 13px; cursor: pointer; }
   .form-actions { display: flex; gap: 12px; align-items: center; margin-top: 0.5rem; }
-
-  /* ── ALERTS ── */
   .alert { border-radius: var(--radius); padding: 14px 18px; font-size: 13px; margin-bottom: 1.25rem; display: none; }
   .alert.show { display: block; }
   .alert.success { background: var(--success-light); color: var(--success); border-left: 3px solid var(--accent); }
   .alert.error { background: var(--danger-light); color: var(--danger); border-left: 3px solid var(--danger); }
   .alert.warning { background: var(--warning-light); color: var(--warning); border-left: 3px solid #D4880A; }
-
-  /* ── LOADING SPINNER ── */
   .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.4); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; vertical-align: middle; margin-right: 6px; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* ── ADMIN LOGIN ── */
   .login-wrap { max-width: 380px; margin: 4rem auto; }
   .login-hint { font-size: 12px; color: var(--text-faint); text-align: center; margin-top: 10px; }
-
-  /* ── STATS ── */
   .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 1.5rem; }
   .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; text-align: center; }
   .stat-num { font-size: 28px; font-weight: 600; }
   .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-top: 2px; }
-
-  /* ── REQUEST CARDS ── */
   .requests-list { display: flex; flex-direction: column; gap: 12px; }
   .req-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
   .req-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; }
@@ -129,22 +78,16 @@
   .req-reason { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
   .req-actions { display: flex; gap: 8px; align-items: center; }
   .req-submitted { font-size: 11px; color: var(--text-faint); }
-
-  /* ── BADGE ── */
   .badge { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
   .badge.pending { background: #FDF5E8; color: #7A5010; border: 1px solid #F0D49A; }
   .badge.approved { background: var(--success-light); color: var(--success); border: 1px solid #9ECFBF; }
   .badge.rejected { background: var(--danger-light); color: var(--danger); border: 1px solid #E8BABA; }
-
-  /* ── FILTER ── */
   .filter-bar { display: flex; gap: 8px; margin-bottom: 1.25rem; flex-wrap: wrap; align-items: center; }
   .filter-chip { padding: 5px 14px; border: 1px solid var(--border); border-radius: 99px; font-size: 12px; cursor: pointer; background: var(--surface); color: var(--text-muted); transition: all 0.15s; }
   .filter-chip:hover { border-color: var(--accent); color: var(--accent); }
   .filter-chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
   .filter-spacer { flex: 1; }
   .filter-count { font-size: 12px; color: var(--text-faint); }
-
-  /* ── MY APPS ── */
   .own-req-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; display: flex; gap: 1rem; align-items: flex-start; }
   .own-req-body { flex: 1; }
   .own-req-title { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
@@ -153,20 +96,15 @@
   .own-req-side { text-align: right; flex-shrink: 0; }
   .own-req-days { font-size: 22px; font-weight: 600; line-height: 1; }
   .own-req-days-label { font-size: 11px; color: var(--text-faint); }
-
-  /* ── MODAL ── */
   .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 200; display: none; align-items: center; justify-content: center; padding: 1rem; }
   .modal-overlay.open { display: flex; }
   .modal { background: var(--surface); border-radius: var(--radius-lg); padding: 2rem; max-width: 480px; width: 100%; border: 1px solid var(--border); }
   .modal h3 { font-family: var(--font-serif); font-size: 20px; margin-bottom: 0.5rem; }
   .modal p { font-size: 14px; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6; }
   .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
-
   .divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
   .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-faint); }
   .empty-state p { font-size: 14px; }
-
-  /* ── CALENDAR ── */
   .cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
   .cal-month-label { font-family: var(--font-serif); font-size: 22px; }
   .cal-nav-btns { display: flex; gap: 8px; }
@@ -180,25 +118,19 @@
   .cal-day-num { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
   .cal-cell.today .cal-day-num { color: var(--accent); }
   .cal-event { font-size: 10px; font-weight: 500; padding: 2px 6px; border-radius: 4px; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.5; }
-  .cal-event.approved { background: #C8EAD8; color: #0F5132; }
-  .cal-event.pending  { background: #FDDCDC; color: #7A2020; }
   .cal-legend { display: flex; gap: 1.25rem; align-items: center; margin-bottom: 1.5rem; font-size: 13px; color: var(--text-muted); }
   .cal-legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
-
-  /* ── MINI CALENDARS ── */
   .mini-cal { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; cursor: pointer; transition: border-color 0.15s; }
   .mini-cal:hover { border-color: var(--accent); }
-  .mini-cal.active-month { border-color: var(--accent); background: var(--accent-light); }
   .mini-cal-title { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; text-align:center; }
   .mini-cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; }
   .mini-dow { font-size: 8px; text-align: center; color: var(--text-faint); font-weight: 600; padding: 1px 0; }
-  .mini-day { font-size: 9px; text-align: center; padding: 2px 1px; border-radius: 3px; color: var(--text-muted); min-height: 14px; position: relative; }
+  .mini-day { font-size: 9px; text-align: center; padding: 2px 1px; border-radius: 3px; color: var(--text-muted); min-height: 14px; }
   .mini-day.outside { color: var(--border); }
   .mini-day.has-approved { background: #C8EAD8; color: #0F5132; font-weight: 600; }
   .mini-day.has-pending { background: #FDDCDC; color: #7A2020; font-weight: 600; }
   .mini-day.has-both { background: linear-gradient(135deg, #C8EAD8 50%, #FDDCDC 50%); color: #1A1714; font-weight: 600; }
   .mini-day.is-today { outline: 1.5px solid var(--accent); border-radius: 3px; }
-
   @media (max-width: 750px) {
     #page-calendar > div { grid-template-columns: 1fr !important; }
     #cal-mini-months { flex-direction: row !important; flex-wrap: wrap; position: static !important; }
@@ -208,7 +140,6 @@
 </head>
 <body>
 
-<!-- CONFIG BANNER -->
 <div id="config-banner">
   ⚠ No backend connected. Enter your Google Apps Script URL to enable shared storage:
   <div id="config-form">
@@ -217,7 +148,6 @@
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="brand">Practice <span>Leave</span> Portal</div>
   <nav class="nav-tabs">
@@ -228,22 +158,16 @@
   </nav>
 </header>
 
-<!-- PAGE: APPLY -->
 <div id="page-apply" class="page visible">
   <div class="card">
     <div class="card-title">Leave Application</div>
     <div class="card-sub">Complete all fields. Your application will be submitted and the practice manager notified.</div>
-
     <div id="apply-success" class="alert success"></div>
     <div id="apply-error" class="alert error"></div>
-
     <div class="field">
       <label>Applicant *</label>
-      <select id="f-doctor">
-        <option value="">— Select your name —</option>
-      </select>
+      <select id="f-doctor"><option value="">— Select your name —</option></select>
     </div>
-
     <div class="field">
       <label>Leave Type *</label>
       <div class="leave-types">
@@ -257,24 +181,15 @@
       </div>
       <input type="hidden" id="f-type">
     </div>
-
     <div class="field-row">
-      <div class="field">
-        <label>From Date *</label>
-        <input type="date" id="f-from">
-      </div>
-      <div class="field">
-        <label>To Date *</label>
-        <input type="date" id="f-to">
-      </div>
+      <div class="field"><label>From Date *</label><input type="date" id="f-from"></div>
+      <div class="field"><label>To Date *</label><input type="date" id="f-to"></div>
     </div>
-    <div id="duration-display" style="font-size:13px; color:var(--accent); margin:-0.75rem 0 1.25rem; font-weight:500;"></div>
-
+    <div id="duration-display" style="font-size:13px;color:var(--accent);margin:-0.75rem 0 1.25rem;font-weight:500;"></div>
     <div class="field">
       <label>Reason / Additional Notes *</label>
       <textarea id="f-reason" placeholder="Briefly describe the reason for your leave request..."></textarea>
     </div>
-
     <hr class="divider">
     <div class="form-actions">
       <button class="btn-primary" id="submit-btn" onclick="submitApplication()">Submit Application</button>
@@ -283,22 +198,18 @@
   </div>
 </div>
 
-<!-- PAGE: MY APPLICATIONS -->
 <div id="page-myapps" class="page">
   <div class="card">
     <div class="card-title">My Applications</div>
     <div class="card-sub">Filter by your name to view all submitted requests and their status.</div>
     <div class="field" style="margin-bottom:0;">
       <label>Filter by Doctor</label>
-      <select id="myapps-doctor" onchange="renderMyApps()">
-        <option value="">— Select your name —</option>
-      </select>
+      <select id="myapps-doctor" onchange="renderMyApps()"><option value="">— Select your name —</option></select>
     </div>
   </div>
   <div id="myapps-list" class="requests-list"></div>
 </div>
 
-<!-- PAGE: ADMIN -->
 <div id="page-admin" class="page">
   <div id="admin-login" class="login-wrap">
     <div class="card">
@@ -307,26 +218,22 @@
       <div id="admin-login-error" class="alert error">Incorrect password. Please try again.</div>
       <div class="field">
         <label>Manager</label>
-        <select id="admin-user">
-        <option value="">— Select your name —</option>
-      </select>
+        <select id="admin-user"><option value="">— Select your name —</option></select>
       </div>
       <div class="field">
         <label>Password</label>
         <input type="password" id="admin-password" placeholder="Enter password" onkeydown="if(event.key==='Enter') adminLogin()">
       </div>
-      <div class="form-actions">
-        <button class="btn-primary" onclick="adminLogin()">Login</button>
-      </div>
+      <div class="form-actions"><button class="btn-primary" onclick="adminLogin()">Login</button></div>
     </div>
     <p class="login-hint">Contact your administrator to reset your password.</p>
   </div>
 
   <div id="admin-panel" style="display:none;">
-    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
       <div>
-        <div style="font-family:var(--font-serif); font-size:22px;">Approval Panel</div>
-        <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">Signed in as <strong id="admin-name-display"></strong></div>
+        <div style="font-family:var(--font-serif);font-size:22px;">Approval Panel</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">Signed in as <strong id="admin-name-display"></strong></div>
       </div>
       <div style="display:flex;gap:8px;">
         <button class="btn-ghost" style="font-size:13px;" onclick="loadAndRender()">↻ Refresh</button>
@@ -334,64 +241,50 @@
       </div>
     </div>
     <div class="stats-row" id="admin-stats"></div>
-
-    <!-- Admin sub-tabs -->
-    <div style="display:flex; gap:4px; margin-bottom:1.5rem; border-bottom:1px solid var(--border); padding-bottom:0;">
-      <button class="admin-sub-tab active" onclick="showAdminTab('requests',this)" style="padding:8px 18px; border:none; background:transparent; cursor:pointer; font-size:13px; font-weight:500; color:var(--text-muted); border-bottom:2px solid transparent; margin-bottom:-1px; transition:all 0.15s;">Leave Requests</button>
-      <button class="admin-sub-tab" onclick="showAdminTab('settings',this)" style="padding:8px 18px; border:none; background:transparent; cursor:pointer; font-size:13px; font-weight:500; color:var(--text-muted); border-bottom:2px solid transparent; margin-bottom:-1px; transition:all 0.15s;">Settings</button>
+    <div style="display:flex;gap:4px;margin-bottom:1.5rem;border-bottom:1px solid var(--border);padding-bottom:0;">
+      <button class="admin-sub-tab active" onclick="showAdminTab('requests',this)" style="padding:8px 18px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:500;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.15s;">Leave Requests</button>
+      <button class="admin-sub-tab" onclick="showAdminTab('settings',this)" style="padding:8px 18px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:500;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.15s;">Settings</button>
     </div>
-
-    <!-- Requests sub-panel -->
     <div id="admin-sub-requests">
       <div class="filter-bar">
-        <button class="filter-chip" onclick="setFilter('all', this)">All</button>
-        <button class="filter-chip active" onclick="setFilter('pending', this)">Pending</button>
-        <button class="filter-chip" onclick="setFilter('approved', this)">Approved</button>
-        <button class="filter-chip" onclick="setFilter('rejected', this)">Rejected</button>
+        <button class="filter-chip" onclick="setFilter('all',this)">All</button>
+        <button class="filter-chip active" onclick="setFilter('pending',this)">Pending</button>
+        <button class="filter-chip" onclick="setFilter('approved',this)">Approved</button>
+        <button class="filter-chip" onclick="setFilter('rejected',this)">Rejected</button>
         <div class="filter-spacer"></div>
         <span class="filter-count" id="filter-count"></span>
       </div>
       <div id="admin-requests" class="requests-list"></div>
     </div>
-
-    <!-- Settings sub-panel -->
     <div id="admin-sub-settings" style="display:none;">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
-
-        <!-- Doctors -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
         <div class="card" style="margin-bottom:0;">
-          <div class="card-title" style="font-size:17px; margin-bottom:4px;">Doctors</div>
+          <div class="card-title" style="font-size:17px;margin-bottom:4px;">Doctors</div>
           <div class="card-sub" style="margin-bottom:1rem;">Manage who appears in the applicant dropdown.</div>
           <div id="doctors-list" style="margin-bottom:1rem;"></div>
-          <div style="display:flex; gap:8px;">
-            <input type="text" id="new-doctor-input" placeholder="Dr. Full Name" style="flex:1; padding:8px 12px; border:1px solid var(--border); border-radius:var(--radius); font-size:13px; font-family:var(--font-sans); outline:none;" onkeydown="if(event.key==='Enter') addDoctor()">
-            <button class="btn-primary" onclick="addDoctor()" style="padding:8px 16px; font-size:13px;">Add</button>
+          <div style="display:flex;gap:8px;">
+            <input type="text" id="new-doctor-input" placeholder="Dr. Full Name" style="flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:var(--font-sans);outline:none;" onkeydown="if(event.key==='Enter') addDoctor()">
+            <button class="btn-primary" onclick="addDoctor()" style="padding:8px 16px;font-size:13px;">Add</button>
           </div>
         </div>
-
-        <!-- Managers -->
         <div class="card" style="margin-bottom:0;">
-          <div class="card-title" style="font-size:17px; margin-bottom:4px;">Managers</div>
-          <div class="card-sub" style="margin-bottom:1rem;">Manage admin logins. Passwords are stored locally.</div>
+          <div class="card-title" style="font-size:17px;margin-bottom:4px;">Managers</div>
+          <div class="card-sub" style="margin-bottom:1rem;">Manage admin logins.</div>
           <div id="managers-list" style="margin-bottom:1rem;"></div>
-          <div style="display:flex; gap:8px; flex-direction:column;">
-            <input type="text" id="new-mgr-name" placeholder="Full name" style="padding:8px 12px; border:1px solid var(--border); border-radius:var(--radius); font-size:13px; font-family:var(--font-sans); outline:none;">
-            <input type="text" id="new-mgr-email" placeholder="email@yourdr.co.za" style="padding:8px 12px; border:1px solid var(--border); border-radius:var(--radius); font-size:13px; font-family:var(--font-sans); outline:none;">
-            <input type="password" id="new-mgr-password" placeholder="Password" style="padding:8px 12px; border:1px solid var(--border); border-radius:var(--radius); font-size:13px; font-family:var(--font-sans); outline:none;" onkeydown="if(event.key==='Enter') addManager()">
-            <button class="btn-primary" onclick="addManager()" style="padding:8px 16px; font-size:13px; align-self:flex-start;">Add Manager</button>
+          <div style="display:flex;gap:8px;flex-direction:column;">
+            <input type="text" id="new-mgr-name" placeholder="Full name" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:var(--font-sans);outline:none;">
+            <input type="text" id="new-mgr-email" placeholder="email@yourdr.co.za" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:var(--font-sans);outline:none;">
+            <input type="password" id="new-mgr-password" placeholder="Password" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:var(--font-sans);outline:none;" onkeydown="if(event.key==='Enter') addManager()">
+            <button class="btn-primary" onclick="addManager()" style="padding:8px 16px;font-size:13px;align-self:flex-start;">Add Manager</button>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
 
-<!-- PAGE: CALENDAR -->
 <div id="page-calendar" class="page" style="max-width:1200px;">
-  <div style="display:grid; grid-template-columns:1fr 220px; gap:1.5rem; align-items:start;">
-
-    <!-- LEFT: Main calendar -->
+  <div style="display:grid;grid-template-columns:1fr 220px;gap:1.5rem;align-items:start;">
     <div>
       <div class="cal-nav">
         <div class="cal-month-label" id="cal-month-label"></div>
@@ -409,14 +302,10 @@
       </div>
       <div class="cal-grid" id="cal-grid"></div>
     </div>
-
-    <!-- RIGHT: Mini month previews -->
     <div id="cal-mini-months" style="display:flex;flex-direction:column;gap:12px;position:sticky;top:80px;"></div>
-
   </div>
 </div>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="confirm-modal">
   <div class="modal">
     <h3 id="modal-title">Confirm Action</h3>
@@ -434,19 +323,15 @@
 // ═══════════════════════════════════════
 const HARDCODED_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzvNlIWtKJmNNoXWh77SnBB3kApqvI2SIlQoVXTpgfl4fSAxjdlG2N7dqDo4CEIg197/exec';
 let currentManager = null;
-let _doctors  = null;   // in-memory cache for this session
+let _doctors  = null;
 let _managers = null;
 
-// ── Script URL ──
-function getScriptUrl() { return HARDCODED_SCRIPT_URL || localStorage.getItem(STORAGE_KEY) || ''; }
+function getScriptUrl() { return HARDCODED_SCRIPT_URL || localStorage.getItem('leave_script_url') || ''; }
 
 function saveScriptUrl() {
   const url = document.getElementById('script-url-input').value.trim();
-  if (!url.startsWith('https://script.google.com')) {
-    alert('Please paste a valid Apps Script URL (starts with https://script.google.com)');
-    return;
-  }
-  localStorage.setItem(STORAGE_KEY, url);
+  if (!url.startsWith('https://script.google.com')) { alert('Please paste a valid Apps Script URL'); return; }
+  localStorage.setItem('leave_script_url', url);
   document.getElementById('config-banner').classList.add('hidden');
   showToast('Backend connected!');
   initDropdowns();
@@ -456,26 +341,45 @@ function checkConfigBanner() {
   if (getScriptUrl()) document.getElementById('config-banner').classList.add('hidden');
 }
 
+// ═══════════════════════════════════════
+//  TIMEZONE-SAFE DATE HELPER
+//  Extracts YYYY-MM-DD without UTC conversion.
+//  new Date('2026-06-15').toISOString() = '2026-06-14T22:00:00Z' in UTC+2,
+//  shifting every date back 1 day on the calendar. This fixes that.
+// ═══════════════════════════════════════
+function toDateStr(d) {
+  if (!d) return '';
+  const s = String(d);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;          // already plain YYYY-MM-DD
+  if (s.includes('T')) return s.slice(0, 10);             // ISO timestamp — slice before T
+  const dt = new Date(s);
+  if (isNaN(dt)) return '';
+  const y = dt.getFullYear();
+  const m = String(dt.getMonth() + 1).padStart(2, '0');
+  const day = String(dt.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+// Builds a local-time YYYY-MM-DD string from a JS Date object
+function localDateStr(date) {
+  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+}
+
 // ── Fetch helpers ──
 async function sheetGet(type) {
   const url = getScriptUrl();
   if (!url) return null;
-  try {
-    const res = await fetch(`${url}?type=${type}`);
-    return await res.json();
-  } catch(e) { console.warn('GET failed', e); return null; }
+  try { const res = await fetch(`${url}?type=${type}`); return await res.json(); }
+  catch(e) { console.warn('GET failed', e); return null; }
 }
 
 async function sheetPost(payload) {
   const url = getScriptUrl();
   if (!url) return { success: false, offline: true };
-  try {
-    const res = await fetch(url, { method: 'POST', body: JSON.stringify(payload) });
-    return await res.json();
-  } catch(e) { console.warn('POST failed', e); return { success: false }; }
+  try { const res = await fetch(url, { method:'POST', body:JSON.stringify(payload) }); return await res.json(); }
+  catch(e) { console.warn('POST failed', e); return { success: false }; }
 }
 
-// ── Applications API (unchanged shape) ──
 async function apiGet() {
   const url = getScriptUrl();
   if (!url) return getCachedApps();
@@ -490,32 +394,23 @@ async function apiGet() {
 async function apiPost(payload) {
   const url = getScriptUrl();
   if (!url) { localMutate(payload); return { success: true }; }
-  try {
-    const res = await fetch(url, { method: 'POST', body: JSON.stringify(payload) });
-    return await res.json();
-  } catch(e) {
-    localMutate(payload);
-    return { success: true, offline: true };
-  }
+  try { const res = await fetch(url, { method:'POST', body:JSON.stringify(payload) }); return await res.json(); }
+  catch(e) { localMutate(payload); return { success: true, offline: true }; }
 }
 
-// ── Local cache (fallback when no backend) ──
 const CACHE_KEY = 'leave_applications_cache';
 function getCachedApps() { try { return JSON.parse(localStorage.getItem(CACHE_KEY)) || []; } catch { return []; } }
 function cacheApps(apps) { localStorage.setItem(CACHE_KEY, JSON.stringify(apps)); }
 function localMutate(payload) {
   let apps = getCachedApps();
-  if (payload.action === 'create')      apps.unshift(payload.data);
-  else if (payload.action === 'update') apps = apps.map(a => a.id === payload.id ? {...a, ...payload.fields} : a);
-  else if (payload.action === 'delete') apps = apps.filter(a => a.id !== payload.id);
+  if (payload.action==='create')      apps.unshift(payload.data);
+  else if (payload.action==='update') apps = apps.map(a => a.id===payload.id ? {...a,...payload.fields} : a);
+  else if (payload.action==='delete') apps = apps.filter(a => a.id!==payload.id);
   cacheApps(apps);
 }
 
-// ── Doctors — from Sheet ──
-const FALLBACK_DOCTORS = [
-  'Dr. Ingrid Kennon','Dr. Natalie Wessels','Dr. Irma Louw','Dr. Ina-Mari McAlister',
-  'Dr. Bronwyn Pitman'
-];
+// ── Doctors ──
+const FALLBACK_DOCTORS = ['Dr. Ingrid Kennon','Dr. Natalie Wessels','Dr. Irma Louw','Dr. Ina-Mari McAlister','Dr. Bronwyn Pitman'];
 
 async function fetchDoctors(force) {
   if (_doctors && !force) return _doctors;
@@ -535,7 +430,7 @@ async function populateDoctorDropdowns(force) {
   });
 }
 
-// ── Managers — from Sheet ──
+// ── Managers ──
 const FALLBACK_MANAGERS = [
   { key:'ingrid',  name:'Ingrid',  email:'ingrid@yourdr.co.za',  password:'ingrid123' },
   { key:'natalie', name:'Natalie', email:'natalie@yourdr.co.za', password:'natalie123' }
@@ -566,8 +461,8 @@ async function renderDoctorsList() {
   const el = document.getElementById('doctors-list');
   el.innerHTML = '<div style="font-size:13px;color:var(--text-faint);padding:4px 0;">Loading…</div>';
   const doctors = await fetchDoctors(true);
-  if (!doctors.length) { el.innerHTML = '<div style="font-size:13px;color:var(--text-faint);padding:4px 0;">No doctors yet.</div>'; return; }
-  el.innerHTML = doctors.map((d,i) => `
+  if (!doctors.length) { el.innerHTML = '<div style="font-size:13px;color:var(--text-faint);">No doctors yet.</div>'; return; }
+  el.innerHTML = doctors.map(d => `
     <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 10px;background:var(--bg);border-radius:8px;margin-bottom:4px;">
       <span style="font-size:13px;">${d}</span>
       <button onclick="removeDoctor('${d.replace(/'/g,"\\'")}',this)" style="background:none;border:none;cursor:pointer;color:var(--danger);font-size:13px;padding:2px 6px;">✕</button>
@@ -579,24 +474,15 @@ async function addDoctor() {
   const name = input.value.trim();
   if (!name) return;
   const res = await sheetPost({ sheet:'doctors', action:'add', name });
-  if (res.success) {
-    _doctors = null;
-    input.value = '';
-    await renderDoctorsList();
-    await populateDoctorDropdowns(true);
-    showToast(`${name} added.`);
-  } else { showToast('Failed to add — check backend connection.'); }
+  if (res.success) { _doctors=null; input.value=''; await renderDoctorsList(); await populateDoctorDropdowns(true); showToast(`${name} added.`); }
+  else { showToast('Failed to add — check backend connection.'); }
 }
 
 async function removeDoctor(name, btn) {
   btn.disabled = true;
   const res = await sheetPost({ sheet:'doctors', action:'delete', name });
-  if (res.success) {
-    _doctors = null;
-    await renderDoctorsList();
-    await populateDoctorDropdowns(true);
-    showToast(`${name} removed.`);
-  } else { showToast('Failed to remove.'); btn.disabled = false; }
+  if (res.success) { _doctors=null; await renderDoctorsList(); await populateDoctorDropdowns(true); showToast(`${name} removed.`); }
+  else { showToast('Failed to remove.'); btn.disabled=false; }
 }
 
 // ── Settings: managers ──
@@ -604,8 +490,8 @@ async function renderManagersList() {
   const el = document.getElementById('managers-list');
   el.innerHTML = '<div style="font-size:13px;color:var(--text-faint);padding:4px 0;">Loading…</div>';
   const managers = await fetchManagers(true);
-  if (!managers.length) { el.innerHTML = '<div style="font-size:13px;color:var(--text-faint);padding:4px 0;">No managers yet.</div>'; return; }
-  el.innerHTML = managers.map((m) => `
+  if (!managers.length) { el.innerHTML = '<div style="font-size:13px;color:var(--text-faint);">No managers yet.</div>'; return; }
+  el.innerHTML = managers.map(m => `
     <div style="padding:8px 10px;background:var(--bg);border-radius:8px;margin-bottom:6px;">
       <div style="display:flex;align-items:center;justify-content:space-between;">
         <div>
@@ -624,174 +510,122 @@ async function addManager() {
   const name  = document.getElementById('new-mgr-name').value.trim();
   const email = document.getElementById('new-mgr-email').value.trim();
   const pw    = document.getElementById('new-mgr-password').value.trim();
-  if (!name || !email || !pw) { showToast('Please fill in name, email and password.'); return; }
-  const key = name.toLowerCase().replace(/\s+/g,'_') + '_' + Date.now();
-  const res = await sheetPost({ sheet:'managers', action:'add', data:{ key, name, email, password:pw } });
+  if (!name||!email||!pw) { showToast('Please fill in name, email and password.'); return; }
+  const key = name.toLowerCase().replace(/\s+/g,'_')+'_'+Date.now();
+  const res = await sheetPost({ sheet:'managers', action:'add', data:{key,name,email,password:pw} });
   if (res.success) {
-    _managers = null;
-    document.getElementById('new-mgr-name').value = '';
-    document.getElementById('new-mgr-email').value = '';
-    document.getElementById('new-mgr-password').value = '';
-    await renderManagersList();
-    await populateManagerDropdown(true);
+    _managers=null;
+    ['new-mgr-name','new-mgr-email','new-mgr-password'].forEach(id => document.getElementById(id).value='');
+    await renderManagersList(); await populateManagerDropdown(true);
     showToast(`${name} added as manager.`);
   } else { showToast('Failed to add — check backend connection.'); }
 }
 
 async function removeManager(key, name) {
-  if (key === currentManager?.key) { showToast('You cannot remove yourself while signed in.'); return; }
+  if (key===currentManager?.key) { showToast('You cannot remove yourself while signed in.'); return; }
   const res = await sheetPost({ sheet:'managers', action:'delete', key });
-  if (res.success) {
-    _managers = null;
-    await renderManagersList();
-    await populateManagerDropdown(true);
-    showToast(`${name} removed.`);
-  } else { showToast('Failed to remove.'); }
+  if (res.success) { _managers=null; await renderManagersList(); await populateManagerDropdown(true); showToast(`${name} removed.`); }
+  else { showToast('Failed to remove.'); }
 }
 
 async function changePassword(key) {
   const np = prompt('New password:');
-  if (!np || !np.trim()) return;
-  const res = await sheetPost({ sheet:'managers', action:'changePassword', key, password: np.trim() });
-  if (res.success) { _managers = null; showToast('Password updated.'); }
+  if (!np||!np.trim()) return;
+  const res = await sheetPost({ sheet:'managers', action:'changePassword', key, password:np.trim() });
+  if (res.success) { _managers=null; showToast('Password updated.'); }
   else { showToast('Failed to update password.'); }
 }
 
 function showAdminTab(tab, btn) {
-  document.querySelectorAll('.admin-sub-tab').forEach(t => {
-    t.style.color = 'var(--text-muted)';
-    t.style.borderBottomColor = 'transparent';
-  });
-  btn.style.color = 'var(--accent)';
-  btn.style.borderBottomColor = 'var(--accent)';
-  document.getElementById('admin-sub-requests').style.display = tab === 'requests' ? '' : 'none';
-  document.getElementById('admin-sub-settings').style.display = tab === 'settings'  ? '' : 'none';
-  if (tab === 'settings') { renderDoctorsList(); renderManagersList(); }
+  document.querySelectorAll('.admin-sub-tab').forEach(t => { t.style.color='var(--text-muted)'; t.style.borderBottomColor='transparent'; });
+  btn.style.color='var(--accent)'; btn.style.borderBottomColor='var(--accent)';
+  document.getElementById('admin-sub-requests').style.display = tab==='requests' ? '' : 'none';
+  document.getElementById('admin-sub-settings').style.display = tab==='settings'  ? '' : 'none';
+  if (tab==='settings') { renderDoctorsList(); renderManagersList(); }
 }
 
 // ── Helpers ──
-function genId() { return 'LA-' + Date.now().toString(36).toUpperCase(); }
+function genId() { return 'LA-'+Date.now().toString(36).toUpperCase(); }
+
 function formatDate(d) {
   if (!d) return '—';
   const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  // Handle full ISO timestamp (e.g. 2026-05-31T22:00:00.000Z) or plain YYYY-MM-DD
   const dt = new Date(d);
   if (!isNaN(dt)) {
-    // Use UTC values to avoid timezone shifting the date
-    const day = String(dt.getUTCDate()).padStart(2,'0');
-    const mon = MONTHS_SHORT[dt.getUTCMonth()];
-    const yr  = String(dt.getUTCFullYear()).slice(-2);
-    return `${day} ${mon} ${yr}`;
+    return `${String(dt.getUTCDate()).padStart(2,'0')} ${MONTHS_SHORT[dt.getUTCMonth()]} ${String(dt.getUTCFullYear()).slice(-2)}`;
   }
   return d;
 }
+
 function calcDays(from, to) {
-  const d1 = new Date(from), d2 = new Date(to);
-  if (isNaN(d1) || isNaN(d2) || d2 < d1) return 0;
+  const d1=new Date(from), d2=new Date(to);
+  if (isNaN(d1)||isNaN(d2)||d2<d1) return 0;
   return Math.floor((d2-d1)/86400000)+1;
 }
 
 function showToast(msg) {
-  const t = document.createElement('div');
-  t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1D4B3E;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:999;';
-  t.textContent = msg;
-  document.body.appendChild(t);
-  setTimeout(() => t.remove(), 3000);
+  const t=document.createElement('div');
+  t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1D4B3E;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:999;';
+  t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),3000);
 }
 
 function setLoading(btn, loading) {
-  if (loading) {
-    btn.dataset.orig = btn.innerHTML;
-    btn.innerHTML = '<span class="spinner"></span> Submitting…';
-    btn.disabled = true;
-  } else {
-    btn.innerHTML = btn.dataset.orig;
-    btn.disabled = false;
-  }
+  if (loading) { btn.dataset.orig=btn.innerHTML; btn.innerHTML='<span class="spinner"></span> Submitting…'; btn.disabled=true; }
+  else { btn.innerHTML=btn.dataset.orig; btn.disabled=false; }
 }
 
-// ── Date duration ──
 document.getElementById('f-from').addEventListener('change', updateDuration);
 document.getElementById('f-to').addEventListener('change', updateDuration);
 function updateDuration() {
-  const from = document.getElementById('f-from').value;
-  const to = document.getElementById('f-to').value;
-  const el = document.getElementById('duration-display');
-  if (from && to) {
-    const days = calcDays(from, to);
-    el.textContent = days > 0 ? `${days} calendar day${days!==1?'s':''}` : 'Invalid date range';
-    el.style.color = days > 0 ? 'var(--accent)' : 'var(--danger)';
-  } else { el.textContent = ''; }
+  const from=document.getElementById('f-from').value, to=document.getElementById('f-to').value;
+  const el=document.getElementById('duration-display');
+  if (from&&to) { const d=calcDays(from,to); el.textContent=d>0?`${d} calendar day${d!==1?'s':''}`:'Invalid date range'; el.style.color=d>0?'var(--accent)':'var(--danger)'; }
+  else el.textContent='';
 }
 
 function selectType(el) {
-  document.querySelectorAll('.leave-pill').forEach(p => p.classList.remove('selected'));
+  document.querySelectorAll('.leave-pill').forEach(p=>p.classList.remove('selected'));
   el.classList.add('selected');
-  document.getElementById('f-type').value = el.textContent.trim();
+  document.getElementById('f-type').value=el.textContent.trim();
 }
 
-// ── Submit application ──
 async function submitApplication() {
-  const doctor = document.getElementById('f-doctor').value;
-  const type   = document.getElementById('f-type').value;
-  const from   = document.getElementById('f-from').value;
-  const to     = document.getElementById('f-to').value;
-  const reason = document.getElementById('f-reason').value.trim();
-
+  const doctor=document.getElementById('f-doctor').value, type=document.getElementById('f-type').value;
+  const from=document.getElementById('f-from').value, to=document.getElementById('f-to').value;
+  const reason=document.getElementById('f-reason').value.trim();
   hideAlerts();
-  if (!doctor || !type || !from || !to || !reason) {
-    showAlert('apply-error', 'Please fill in all required fields before submitting.');
-    return;
-  }
-  const days = calcDays(from, to);
-  if (days <= 0) { showAlert('apply-error', 'End date must be after start date.'); return; }
-
-  const app = { id: genId(), doctor, type, from, to, days, reason, cover: '', status: 'pending', submittedAt: new Date().toISOString(), decidedAt: '', comments: '', approvedBy: '' };
-
-  const btn = document.getElementById('submit-btn');
-  setLoading(btn, true);
-
-  const result = await apiPost({ action: 'create', data: app });
-  setLoading(btn, false);
-
+  if (!doctor||!type||!from||!to||!reason) { showAlert('apply-error','Please fill in all required fields before submitting.'); return; }
+  const days=calcDays(from,to);
+  if (days<=0) { showAlert('apply-error','End date must be after start date.'); return; }
+  const app={id:genId(),doctor,type,from,to,days,reason,cover:'',status:'pending',submittedAt:new Date().toISOString(),decidedAt:'',comments:'',approvedBy:''};
+  const btn=document.getElementById('submit-btn');
+  setLoading(btn,true);
+  const result=await apiPost({action:'create',data:app});
+  setLoading(btn,false);
   if (result.success) {
-    const note = result.offline ? ' (saved locally — will sync when backend is connected)' : '';
-    showAlert('apply-success', `✓ Application submitted. The managers have been notified by email.${note}`);
+    const note=result.offline?' (saved locally — will sync when backend is connected)':'';
+    showAlert('apply-success',`✓ Application submitted. The managers have been notified by email.${note}`);
     resetForm();
-  } else {
-    showAlert('apply-error', 'Submission failed. Please try again.');
-  }
+  } else { showAlert('apply-error','Submission failed. Please try again.'); }
 }
 
 function resetForm() {
-  ['f-doctor','f-from','f-to','f-reason'].forEach(id => document.getElementById(id).value='');
+  ['f-doctor','f-from','f-to','f-reason'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('f-type').value='';
   document.getElementById('duration-display').textContent='';
-  document.querySelectorAll('.leave-pill').forEach(p => p.classList.remove('selected'));
+  document.querySelectorAll('.leave-pill').forEach(p=>p.classList.remove('selected'));
 }
 
-function showAlert(id, msg) {
-  const el = document.getElementById(id);
-  el.textContent = msg;
-  el.classList.add('show');
-}
-function hideAlerts() {
-  document.getElementById('apply-success').classList.remove('show');
-  document.getElementById('apply-error').classList.remove('show');
-}
+function showAlert(id,msg) { const el=document.getElementById(id); el.textContent=msg; el.classList.add('show'); }
+function hideAlerts() { document.getElementById('apply-success').classList.remove('show'); document.getElementById('apply-error').classList.remove('show'); }
 
-// ── My Applications ──
 async function renderMyApps() {
-  const doctor = document.getElementById('myapps-doctor').value;
-  const container = document.getElementById('myapps-list');
-  if (!doctor) { container.innerHTML = '<div class="empty-state"><p>Select your name above to view your applications.</p></div>'; return; }
-
-  container.innerHTML = '<div class="empty-state"><p>Loading…</p></div>';
-  const apps = (await apiGet()).filter(a => a.doctor === doctor);
-
-  if (!apps.length) { container.innerHTML = '<div class="empty-state"><p>No applications found.</p></div>'; return; }
-
-  container.innerHTML = apps.map(a => `
+  const doctor=document.getElementById('myapps-doctor').value, container=document.getElementById('myapps-list');
+  if (!doctor) { container.innerHTML='<div class="empty-state"><p>Select your name above to view your applications.</p></div>'; return; }
+  container.innerHTML='<div class="empty-state"><p>Loading…</p></div>';
+  const apps=(await apiGet()).filter(a=>a.doctor===doctor);
+  if (!apps.length) { container.innerHTML='<div class="empty-state"><p>No applications found.</p></div>'; return; }
+  container.innerHTML=apps.map(a=>`
     <div class="own-req-card">
       <div class="own-req-body">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
@@ -800,287 +634,257 @@ async function renderMyApps() {
         </div>
         <div class="own-req-dates">${formatDate(a.from)} → ${formatDate(a.to)}</div>
         <div class="own-req-reason">${a.reason}</div>
-        ${a.cover && a.cover.trim().length > 2 ? `<div style="font-size:12px;color:var(--text-faint);margin-top:4px;">Cover: ${a.cover}</div>` : ''}
-        ${a.comments ? `<div style="font-size:12px;color:var(--warning);margin-top:4px;background:var(--warning-light);padding:4px 8px;border-radius:6px;">Manager note: ${a.comments}</div>` : ''}
+        ${a.cover&&a.cover.trim().length>2?`<div style="font-size:12px;color:var(--text-faint);margin-top:4px;">Cover: ${a.cover}</div>`:''}
+        ${a.comments?`<div style="font-size:12px;color:var(--warning);margin-top:4px;background:var(--warning-light);padding:4px 8px;border-radius:6px;">Manager note: ${a.comments}</div>`:''}
         <div style="font-size:11px;color:var(--text-faint);margin-top:6px;">Ref: ${a.id} · Submitted ${new Date(a.submittedAt).toLocaleDateString()}</div>
       </div>
       <div class="own-req-side">
         <div class="own-req-days">${a.days}</div>
         <div class="own-req-days-label">day${a.days!=1?'s':''}</div>
       </div>
-    </div>
-  `).join('');
+    </div>`).join('');
 }
 
 // ── Admin ──
-let allApps = [];
-let currentFilter = 'pending';
-let pendingAction = null;
+let allApps=[], currentFilter='pending', pendingAction=null;
 
 function adminLogin() {
-  const key = document.getElementById('admin-user').value;
-  const pw  = document.getElementById('admin-password').value;
+  const key=document.getElementById('admin-user').value, pw=document.getElementById('admin-password').value;
   fetchManagers().then(managers => {
-    const mgr = managers.find(m => m.key === key);
-    if (mgr && pw === mgr.password) {
-      currentManager = mgr;
-      document.getElementById('admin-login').style.display = 'none';
-      document.getElementById('admin-panel').style.display = 'block';
+    const mgr=managers.find(m=>m.key===key);
+    if (mgr&&pw===mgr.password) {
+      currentManager=mgr;
+      document.getElementById('admin-login').style.display='none';
+      document.getElementById('admin-panel').style.display='block';
       document.getElementById('admin-login-error').classList.remove('show');
-      document.getElementById('admin-name-display').textContent = mgr.name;
+      document.getElementById('admin-name-display').textContent=mgr.name;
       loadAndRender();
-    } else {
-      document.getElementById('admin-login-error').classList.add('show');
-    }
+    } else { document.getElementById('admin-login-error').classList.add('show'); }
   });
 }
+
 function adminLogout() {
-  currentManager = null;
-  document.getElementById('admin-login').style.display = '';
-  document.getElementById('admin-panel').style.display = 'none';
-  document.getElementById('admin-password').value = '';
-  document.getElementById('admin-user').value = '';
+  currentManager=null;
+  document.getElementById('admin-login').style.display='';
+  document.getElementById('admin-panel').style.display='none';
+  document.getElementById('admin-password').value='';
+  document.getElementById('admin-user').value='';
 }
 
 async function loadAndRender() {
-  document.getElementById('admin-requests').innerHTML = '<div class="empty-state"><p>Loading…</p></div>';
-  allApps = await apiGet();
-  renderAdminPanel();
+  document.getElementById('admin-requests').innerHTML='<div class="empty-state"><p>Loading…</p></div>';
+  allApps=await apiGet(); renderAdminPanel();
 }
 
-function setFilter(f, el) {
-  currentFilter = f;
-  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  renderAdminPanel();
+function setFilter(f,el) {
+  currentFilter=f;
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active'); renderAdminPanel();
 }
 
 function renderAdminPanel() {
-  const pending  = allApps.filter(a => a.status==='pending').length;
-  const approved = allApps.filter(a => a.status==='approved').length;
-  const rejected = allApps.filter(a => a.status==='rejected').length;
-
-  document.getElementById('admin-stats').innerHTML = `
+  const pending=allApps.filter(a=>a.status==='pending').length;
+  const approved=allApps.filter(a=>a.status==='approved').length;
+  const rejected=allApps.filter(a=>a.status==='rejected').length;
+  document.getElementById('admin-stats').innerHTML=`
     <div class="stat-card"><div class="stat-num">${allApps.length}</div><div class="stat-label">Total</div></div>
     <div class="stat-card" style="border-color:#F0D49A;"><div class="stat-num" style="color:var(--warning);">${pending}</div><div class="stat-label">Pending</div></div>
     <div class="stat-card" style="border-color:#9ECFBF;"><div class="stat-num" style="color:var(--accent);">${approved}</div><div class="stat-label">Approved</div></div>
-    <div class="stat-card" style="border-color:#E8BABA;"><div class="stat-num" style="color:var(--danger);">${rejected}</div><div class="stat-label">Rejected</div></div>
-  `;
-
-  const filtered = allApps.filter(a => currentFilter==='all' || a.status===currentFilter);
-  document.getElementById('filter-count').textContent = `${filtered.length} record${filtered.length!==1?'s':''}`;
-
-  const container = document.getElementById('admin-requests');
-  if (!filtered.length) { container.innerHTML = '<div class="empty-state"><p>No applications match this filter.</p></div>'; return; }
-
-  container.innerHTML = filtered.map(a => `
+    <div class="stat-card" style="border-color:#E8BABA;"><div class="stat-num" style="color:var(--danger);">${rejected}</div><div class="stat-label">Rejected</div></div>`;
+  const filtered=allApps.filter(a=>currentFilter==='all'||a.status===currentFilter);
+  document.getElementById('filter-count').textContent=`${filtered.length} record${filtered.length!==1?'s':''}`;
+  const container=document.getElementById('admin-requests');
+  if (!filtered.length) { container.innerHTML='<div class="empty-state"><p>No applications match this filter.</p></div>'; return; }
+  container.innerHTML=filtered.map(a=>`
     <div class="req-card">
       <div class="req-header">
-        <div>
-          <div class="req-name">${a.doctor}</div>
-          <div class="req-meta">${a.type} · ${a.days} day${a.days!=1?'s':''} · Ref ${a.id}</div>
-        </div>
+        <div><div class="req-name">${a.doctor}</div><div class="req-meta">${a.type} · ${a.days} day${a.days!=1?'s':''} · Ref ${a.id}</div></div>
         <span class="badge ${a.status}">${a.status}</span>
       </div>
       <div class="req-dates">📅 ${formatDate(a.from)} → ${formatDate(a.to)}</div>
       <div class="req-reason">${a.reason}</div>
-      ${a.cover && a.cover.trim().length > 2 ? `<div style="font-size:12px;color:var(--text-faint);margin-bottom:8px;">Cover: ${a.cover}</div>` : ''}
+      ${a.cover&&a.cover.trim().length>2?`<div style="font-size:12px;color:var(--text-faint);margin-bottom:8px;">Cover: ${a.cover}</div>`:''}
       <div class="req-actions">
-        ${a.status==='pending' ? `
+        ${a.status==='pending'?`
           <button class="btn-approve" onclick="openConfirm('approve','${a.id}')">Approve</button>
-          <button class="btn-reject" onclick="openConfirm('reject','${a.id}')">Reject</button>
-        ` : `
-          <button class="btn-ghost" style="font-size:12px;padding:6px 14px;" onclick="openConfirm('pending','${a.id}')">Reset to Pending</button>
-        `}
+          <button class="btn-reject" onclick="openConfirm('reject','${a.id}')">Reject</button>`:`
+          <button class="btn-ghost" style="font-size:12px;padding:6px 14px;" onclick="openConfirm('pending','${a.id}')">Reset to Pending</button>`}
         <button class="btn-ghost" style="font-size:12px;padding:6px 14px;color:var(--danger);" onclick="openConfirm('delete','${a.id}')">Delete</button>
         <div class="req-submitted" style="margin-left:auto;">Submitted ${new Date(a.submittedAt).toLocaleDateString()}</div>
       </div>
-      ${a.status!=='pending' && a.comments ? `<div style="font-size:12px;color:var(--text-muted);margin-top:8px;border-top:1px solid var(--border);padding-top:8px;">Note: ${a.comments}</div>` : ''}
-      ${a.approvedBy ? `<div style="font-size:11px;color:var(--text-faint);margin-top:6px;">${a.status==='approved'?'Approved':'Rejected'} by ${a.approvedBy} · ${a.decidedAt ? new Date(a.decidedAt).toLocaleDateString() : ''}</div>` : ''}
-    </div>
-  `).join('');
+      ${a.status!=='pending'&&a.comments?`<div style="font-size:12px;color:var(--text-muted);margin-top:8px;border-top:1px solid var(--border);padding-top:8px;">Note: ${a.comments}</div>`:''}
+      ${a.approvedBy?`<div style="font-size:11px;color:var(--text-faint);margin-top:6px;">${a.status==='approved'?'Approved':'Rejected'} by ${a.approvedBy} · ${a.decidedAt?new Date(a.decidedAt).toLocaleDateString():''}</div>`:''}
+    </div>`).join('');
 }
 
-function openConfirm(action, id) {
-  pendingAction = { action, id };
-  const titles = { approve:'Approve Leave Request', reject:'Reject Leave Request', delete:'Delete Record', pending:'Reset to Pending' };
-  const bodies  = { approve:'This will mark the request as Approved.', reject:'This will mark the request as Rejected.', delete:'This permanently removes the record and cannot be undone.', pending:'This resets the application back to Pending.' };
-  const colors  = { approve:'var(--success)', reject:'var(--danger)', delete:'var(--danger)', pending:'var(--accent)' };
-  document.getElementById('modal-title').textContent = titles[action];
-  document.getElementById('modal-body').textContent  = bodies[action];
-  const btn = document.getElementById('modal-confirm-btn');
-  btn.textContent = action.charAt(0).toUpperCase()+action.slice(1);
-  btn.style.background = colors[action];
+function openConfirm(action,id) {
+  pendingAction={action,id};
+  const titles={approve:'Approve Leave Request',reject:'Reject Leave Request',delete:'Delete Record',pending:'Reset to Pending'};
+  const bodies={approve:'This will mark the request as Approved.',reject:'This will mark the request as Rejected.',delete:'This permanently removes the record and cannot be undone.',pending:'This resets the application back to Pending.'};
+  const colors={approve:'var(--success)',reject:'var(--danger)',delete:'var(--danger)',pending:'var(--accent)'};
+  document.getElementById('modal-title').textContent=titles[action];
+  document.getElementById('modal-body').textContent=bodies[action];
+  const btn=document.getElementById('modal-confirm-btn');
+  btn.textContent=action.charAt(0).toUpperCase()+action.slice(1);
+  btn.style.background=colors[action];
   document.getElementById('confirm-modal').classList.add('open');
 }
 function closeModal() { document.getElementById('confirm-modal').classList.remove('open'); pendingAction=null; }
 
 document.getElementById('modal-confirm-btn').addEventListener('click', async function() {
   if (!pendingAction) return;
-  const { action, id } = pendingAction;
-  closeModal();
-  this.disabled = true;
-
-  if (action==='delete') {
-    await apiPost({ action:'delete', id });
-  } else {
-    const statusMap = { approve:'approved', reject:'rejected', pending:'pending' };
-    const fields = { status: statusMap[action] || action, decidedAt: new Date().toISOString() };
-    if (action === 'approve' || action === 'reject') fields.approvedBy = currentManager ? currentManager.name : '';
-    await apiPost({ action:'update', id, fields });
+  const {action,id}=pendingAction;
+  closeModal(); this.disabled=true;
+  if (action==='delete') { await apiPost({action:'delete',id}); }
+  else {
+    const statusMap={approve:'approved',reject:'rejected',pending:'pending'};
+    const fields={status:statusMap[action]||action,decidedAt:new Date().toISOString()};
+    if (action==='approve'||action==='reject') fields.approvedBy=currentManager?currentManager.name:'';
+    await apiPost({action:'update',id,fields});
   }
-
-  await loadAndRender();
-  this.disabled = false;
-  showToast(action==='delete' ? 'Record deleted.' : `Application ${action}d.`);
+  await loadAndRender(); this.disabled=false;
+  showToast(action==='delete'?'Record deleted.':`Application ${action}d.`);
 });
 
-document.getElementById('confirm-modal').addEventListener('click', function(e) { if(e.target===this) closeModal(); });
+document.getElementById('confirm-modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 
-// ── Calendar ──
-let calYear = new Date().getFullYear();
-let calMonth = new Date().getMonth();
-const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-const DAYS_MINI = ['S','M','T','W','T','F','S'];
+// ═══════════════════════════════════════
+//  CALENDAR
+// ═══════════════════════════════════════
+let calYear=new Date().getFullYear(), calMonth=new Date().getMonth();
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MONTHS_SHORT=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const DAYS_MINI=['S','M','T','W','T','F','S'];
 
-function calToday() { calYear = new Date().getFullYear(); calMonth = new Date().getMonth(); renderCalendar(); }
-function calShift(d) { calMonth += d; if (calMonth > 11) { calMonth = 0; calYear++; } else if (calMonth < 0) { calMonth = 11; calYear--; } renderCalendar(); }
-function calJumpTo(y, m) { calYear = y; calMonth = m; renderCalendar(); }
+function calToday(){calYear=new Date().getFullYear();calMonth=new Date().getMonth();renderCalendar();}
+function calShift(d){calMonth+=d;if(calMonth>11){calMonth=0;calYear++;}else if(calMonth<0){calMonth=11;calYear--;}renderCalendar();}
+function calJumpTo(y,m){calYear=y;calMonth=m;renderCalendar();}
 
 function buildEventMap(apps) {
-  // Returns a map of 'YYYY-MM-DD' -> {approved, pending}
-  const map = {};
-  apps.forEach(a => {
-    const st = String(a.status).trim().toLowerCase();
-    if (st === 'rejected' || st === 'reject') return;
-    const fromStr = a.from ? new Date(a.from).toISOString().slice(0,10) : '';
-    const toStr   = a.to   ? new Date(a.to).toISOString().slice(0,10)   : '';
-    if (!fromStr || !toStr) return;
-    const isApproved = st === 'approved' || st === 'approve';
-    let cur = new Date(fromStr);
-    const end = new Date(toStr);
-    while (cur <= end) {
-      const key = cur.toISOString().slice(0,10);
-      if (!map[key]) map[key] = { approved: false, pending: false };
-      if (isApproved) map[key].approved = true;
-      else map[key].pending = true;
-      cur.setDate(cur.getDate() + 1);
+  const map={};
+  apps.forEach(a=>{
+    const st=String(a.status).trim().toLowerCase();
+    if(st==='rejected'||st==='reject') return;
+    const fromStr=toDateStr(a.from);   // FIXED: timezone-safe
+    const toStr=toDateStr(a.to);       // FIXED: timezone-safe
+    if(!fromStr||!toStr) return;
+    const isApproved=st==='approved'||st==='approve';
+    // Use noon local time to avoid DST edge cases when iterating days
+    let cur=new Date(fromStr+'T12:00:00');
+    const end=new Date(toStr+'T12:00:00');
+    while(cur<=end){
+      const key=localDateStr(cur);     // FIXED: local date parts, no UTC shift
+      if(!map[key]) map[key]={approved:false,pending:false};
+      if(isApproved) map[key].approved=true; else map[key].pending=true;
+      cur.setDate(cur.getDate()+1);
     }
   });
   return map;
 }
 
-async function renderCalendar() {
-  document.getElementById('cal-month-label').textContent = `${MONTHS[calMonth]} ${calYear}`;
-  const apps = await apiGet();
-  window._calAppsCache = apps;
-  const eventMap = buildEventMap(apps);
+async function renderCalendar(){
+  document.getElementById('cal-month-label').textContent=`${MONTHS[calMonth]} ${calYear}`;
+  const apps=await apiGet();
+  window._calAppsCache=apps;
+  const eventMap=buildEventMap(apps);
   renderMainCal(eventMap);
   renderMiniMonths(eventMap);
 }
 
-function renderMainCal(eventMap) {
-  const grid = document.getElementById('cal-grid');
-  const today = new Date();
-  const firstDay = new Date(calYear, calMonth, 1).getDay();
-  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
-  const daysInPrev = new Date(calYear, calMonth, 0).getDate();
-  const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
-  const apps = window._calAppsCache || [];
+function renderMainCal(eventMap){
+  const grid=document.getElementById('cal-grid');
+  const today=new Date();
+  const firstDay=new Date(calYear,calMonth,1).getDay();
+  const daysInMonth=new Date(calYear,calMonth+1,0).getDate();
+  const daysInPrev=new Date(calYear,calMonth,0).getDate();
+  const totalCells=Math.ceil((firstDay+daysInMonth)/7)*7;
+  const apps=window._calAppsCache||[];
+  let html=DAYS.map(d=>`<div class="cal-dow">${d}</div>`).join('');
 
-  let html = DAYS.map(d => `<div class="cal-dow">${d}</div>`).join('');
+  for(let i=0;i<totalCells;i++){
+    let date,outside=false;
+    if(i<firstDay){date=new Date(calYear,calMonth-1,daysInPrev-firstDay+i+1);outside=true;}
+    else if(i>=firstDay+daysInMonth){date=new Date(calYear,calMonth+1,i-firstDay-daysInMonth+1);outside=true;}
+    else{date=new Date(calYear,calMonth,i-firstDay+1);}
 
-  for (let i = 0; i < totalCells; i++) {
-    let date, outside = false;
-    if (i < firstDay) { date = new Date(calYear, calMonth - 1, daysInPrev - firstDay + i + 1); outside = true; }
-    else if (i >= firstDay + daysInMonth) { date = new Date(calYear, calMonth + 1, i - firstDay - daysInMonth + 1); outside = true; }
-    else { date = new Date(calYear, calMonth, i - firstDay + 1); }
+    const isToday=!outside&&date.getDate()===today.getDate()&&date.getMonth()===today.getMonth()&&date.getFullYear()===today.getFullYear();
+    const dateStr=localDateStr(date);  // FIXED: local date parts, no UTC shift
 
-    const isToday = !outside && date.getDate() === today.getDate() && date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear();
-    const dateStr = date.toISOString().slice(0,10);
-
-    const cellApps = apps.filter(a => {
-      const st = String(a.status).trim().toLowerCase();
-      if (st === 'rejected' || st === 'reject') return false;
-      const fromStr = a.from ? new Date(a.from).toISOString().slice(0,10) : '';
-      const toStr   = a.to   ? new Date(a.to).toISOString().slice(0,10)   : '';
-      return dateStr >= fromStr && dateStr <= toStr;
+    const cellApps=apps.filter(a=>{
+      const st=String(a.status).trim().toLowerCase();
+      if(st==='rejected'||st==='reject') return false;
+      const fromStr=toDateStr(a.from); // FIXED: timezone-safe
+      const toStr=toDateStr(a.to);     // FIXED: timezone-safe
+      return dateStr>=fromStr&&dateStr<=toStr;
     });
 
-    const eventHtml = cellApps.map(a => {
-      const st = String(a.status).trim().toLowerCase();
-      const isApproved = st === 'approved' || st === 'approve';
-      const shortName = a.doctor.replace('Dr. ', '').split(' ')[0];
-      const bg    = isApproved ? '#C8EAD8' : '#FDDCDC';
-      const color = isApproved ? '#0F5132' : '#7A2020';
+    const eventHtml=cellApps.map(a=>{
+      const st=String(a.status).trim().toLowerCase();
+      const isApproved=st==='approved'||st==='approve';
+      const shortName=a.doctor.replace('Dr. ','').split(' ')[0];
+      const bg=isApproved?'#C8EAD8':'#FDDCDC';
+      const color=isApproved?'#0F5132':'#7A2020';
       return `<div class="cal-event" style="background:${bg};color:${color};" title="${a.doctor} — ${a.type} (${st})">${shortName}</div>`;
     }).join('');
 
-    html += `<div class="cal-cell${outside?' outside':''}${isToday?' today':''}">
+    html+=`<div class="cal-cell${outside?' outside':''}${isToday?' today':''}">
       <div class="cal-day-num">${date.getDate()}</div>
       ${eventHtml}
     </div>`;
   }
-  grid.innerHTML = html;
+  grid.innerHTML=html;
 }
 
-function renderMiniMonths(eventMap) {
-  const container = document.getElementById('cal-mini-months');
-  const today = new Date();
-  let html = '';
+function renderMiniMonths(eventMap){
+  const container=document.getElementById('cal-mini-months');
+  const today=new Date();
+  let html='';
 
-  for (let offset = 1; offset <= 4; offset++) {
-    let m = calMonth + offset;
-    let y = calYear;
-    while (m > 11) { m -= 12; y++; }
+  for(let offset=1;offset<=4;offset++){
+    let m=calMonth+offset,y=calYear;
+    while(m>11){m-=12;y++;}
+    const firstDay=new Date(y,m,1).getDay();
+    const daysInMonth=new Date(y,m+1,0).getDate();
+    const daysInPrev=new Date(y,m,0).getDate();
+    const totalCells=Math.ceil((firstDay+daysInMonth)/7)*7;
+    let cells=DAYS_MINI.map(d=>`<div class="mini-dow">${d}</div>`).join('');
 
-    const firstDay = new Date(y, m, 1).getDay();
-    const daysInMonth = new Date(y, m + 1, 0).getDate();
-    const daysInPrev = new Date(y, m, 0).getDate();
-    const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+    for(let i=0;i<totalCells;i++){
+      let date,outside=false;
+      if(i<firstDay){date=new Date(y,m-1,daysInPrev-firstDay+i+1);outside=true;}
+      else if(i>=firstDay+daysInMonth){date=new Date(y,m+1,i-firstDay-daysInMonth+1);outside=true;}
+      else{date=new Date(y,m,i-firstDay+1);}
 
-    let cells = DAYS_MINI.map(d => `<div class="mini-dow">${d}</div>`).join('');
-
-    for (let i = 0; i < totalCells; i++) {
-      let date, outside = false;
-      if (i < firstDay) { date = new Date(y, m - 1, daysInPrev - firstDay + i + 1); outside = true; }
-      else if (i >= firstDay + daysInMonth) { date = new Date(y, m + 1, i - firstDay - daysInMonth + 1); outside = true; }
-      else { date = new Date(y, m, i - firstDay + 1); }
-
-      const dateStr = date.toISOString().slice(0,10);
-      const ev = !outside ? eventMap[dateStr] : null;
-      const isToday = !outside && date.getDate() === today.getDate() && date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear();
-
-      let cls = 'mini-day';
-      if (outside) cls += ' outside';
-      if (ev && ev.approved && ev.pending) cls += ' has-both';
-      else if (ev && ev.approved) cls += ' has-approved';
-      else if (ev && ev.pending) cls += ' has-pending';
-      if (isToday) cls += ' is-today';
-
-      cells += `<div class="${cls}">${outside ? '' : date.getDate()}</div>`;
+      const dateStr=localDateStr(date);  // FIXED: local date parts, no UTC shift
+      const ev=!outside?eventMap[dateStr]:null;
+      const isToday=!outside&&date.getDate()===today.getDate()&&date.getMonth()===today.getMonth()&&date.getFullYear()===today.getFullYear();
+      let cls='mini-day';
+      if(outside) cls+=' outside';
+      if(ev&&ev.approved&&ev.pending) cls+=' has-both';
+      else if(ev&&ev.approved) cls+=' has-approved';
+      else if(ev&&ev.pending) cls+=' has-pending';
+      if(isToday) cls+=' is-today';
+      cells+=`<div class="${cls}">${outside?'':date.getDate()}</div>`;
     }
 
-    html += `<div class="mini-cal" onclick="calJumpTo(${y},${m})" title="Jump to ${MONTHS[m]} ${y}">
+    html+=`<div class="mini-cal" onclick="calJumpTo(${y},${m})" title="Jump to ${MONTHS[m]} ${y}">
       <div class="mini-cal-title">${MONTHS_SHORT[m]} ${y}</div>
       <div class="mini-cal-grid">${cells}</div>
     </div>`;
   }
-
-  container.innerHTML = html;
+  container.innerHTML=html;
 }
 
 // ── Navigation ──
-function showPage(page, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+function showPage(page,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('visible'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('page-'+page).classList.add('visible');
-  if (btn) btn.classList.add('active');
-  if (page==='myapps') renderMyApps();
-  if (page==='calendar') renderCalendar();
-  if (page==='admin' && document.getElementById('admin-panel').style.display!=='none') loadAndRender();
+  if(btn) btn.classList.add('active');
+  if(page==='myapps') renderMyApps();
+  if(page==='calendar') renderCalendar();
+  if(page==='admin'&&document.getElementById('admin-panel').style.display!=='none') loadAndRender();
 }
 
 // Init
